@@ -3,8 +3,9 @@ class Solution {
         var max = 0
         var minPrice = prices.first()
         for (price in prices) {
+            val diff = price - minPrice
             if (minPrice > price) minPrice = price
-            if (price - minPrice > max) max = price - minPrice
+            if (diff > max) max = diff
         }
 
         return max
